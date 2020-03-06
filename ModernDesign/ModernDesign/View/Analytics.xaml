@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ModernDesign.View.Analytics"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Report"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+
+                <StackLayout Margin="20">
+                    <StackLayout>
+                        <Frame Padding="0" CornerRadius="15">
+                            <StackLayout
+                                Margin="15"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
+                                <StackLayout Margin="5" HorizontalOptions="FillAndExpand">
+                                    <Label HorizontalOptions="CenterAndExpand" Text="Start Date" />
+                                    <DatePicker
+                                        Margin="0,-10,0,0"
+                                        HorizontalOptions="CenterAndExpand"
+                                        TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Margin="5" HorizontalOptions="FillAndExpand">
+                                    <Label HorizontalOptions="CenterAndExpand" Text="End Date" />
+                                    <DatePicker
+                                        Margin="0,-10,0,0"
+                                        HorizontalOptions="CenterAndExpand"
+                                        TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Margin="5" VerticalOptions="CenterAndExpand">
+                                    <Frame
+                                        Margin="0"
+                                        Padding="15,3,15,3"
+                                        BackgroundColor="#0956a4"
+                                        CornerRadius="10"
+                                        HasShadow="False">
+                                        <Label
+                                            Margin="10"
+                                            HorizontalOptions="CenterAndExpand"
+                                            Text="SHOW"
+                                            TextColor="White" />
+                                    </Frame>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </Frame>
+                        <Frame Margin="0,10,0,20" CornerRadius="15">
+                            <StackLayout x:Name="body" />
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

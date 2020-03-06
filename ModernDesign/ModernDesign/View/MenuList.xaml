@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ModernDesign.View.MenuList"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="More"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10,10,20,20" VerticalOptions="StartAndExpand">
+                <StackLayout
+                    Margin="20,10,20,10"
+                    Padding="0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        Margin="0,0,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="sales.png"
+                        WidthRequest="25" />
+                    <Label
+                        FontSize="18"
+                        Text="Sales Graph"
+                        VerticalOptions="EndAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout
+                    Margin="20,10,20,10"
+                    Padding="0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        Margin="0,0,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="buy.png"
+                        WidthRequest="25" />
+                    <Label
+                        FontSize="18"
+                        Text="Purchase Graph"
+                        VerticalOptions="EndAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout
+                    Margin="20,10,20,10"
+                    Padding="0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        Margin="0,0,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="graph.png"
+                        WidthRequest="25" />
+                    <Label
+                        FontSize="18"
+                        Text="Balance Graph"
+                        VerticalOptions="EndAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout
+                    Margin="20,10,20,10"
+                    Padding="0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        Margin="0,0,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="feedback.png"
+                        WidthRequest="25" />
+                    <Label
+                        FontSize="18"
+                        Text="Feedback"
+                        VerticalOptions="EndAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+
+                <StackLayout
+                    Margin="20,10,20,10"
+                    Padding="0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        Margin="0,0,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="help.png"
+                        WidthRequest="25" />
+                    <Label
+                        FontSize="18"
+                        Text="Help"
+                        VerticalOptions="EndAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+
+                <StackLayout
+                    Margin="20,10,20,10"
+                    Padding="0"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        Margin="0,0,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="contactUs.png"
+                        WidthRequest="25" />
+                    <Label
+                        FontSize="18"
+                        Text="Contact Us"
+                        VerticalOptions="EndAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

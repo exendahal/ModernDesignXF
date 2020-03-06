@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ModernDesign.View.SalesGraph"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sampleBrowser="clr-namespace:ModernDesign.View"
+    Title="Sales Report"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <StackLayout Margin="20">
+                    <StackLayout>
+                        <Frame Padding="0" CornerRadius="15">
+                            <StackLayout
+                                Margin="15"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal">
+                                <StackLayout Margin="5" HorizontalOptions="FillAndExpand">
+                                    <Label HorizontalOptions="CenterAndExpand" Text="Start Date" />
+                                    <DatePicker
+                                        Margin="0,-10,0,0"
+                                        HorizontalOptions="CenterAndExpand"
+                                        TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Margin="5" HorizontalOptions="FillAndExpand">
+                                    <Label HorizontalOptions="CenterAndExpand" Text="End Date" />
+                                    <DatePicker
+                                        Margin="0,-10,0,0"
+                                        HorizontalOptions="CenterAndExpand"
+                                        TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Margin="5" VerticalOptions="CenterAndExpand">
+                                    <Frame
+                                        Margin="0"
+                                        Padding="15,3,15,3"
+                                        BackgroundColor="#0956a4"
+                                        CornerRadius="10"
+                                        HasShadow="False">
+                                        <Label
+                                            Margin="10"
+                                            HorizontalOptions="CenterAndExpand"
+                                            Text="SHOW"
+                                            TextColor="White" />
+                                    </Frame>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </Frame>
+                        <Frame Margin="0,10,0,20" CornerRadius="15">
+                            <StackLayout VerticalOptions="FillAndExpand">
+                                <!--  Graph  -->
+                                <StackLayout x:Name="stack1">
+
+                                    <chart:SfChart
+                                        x:Name="Chart"
+                                        HeightRequest="400"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand">
+                                        <chart:SfChart.BindingContext>
+                                            <sampleBrowser:LineSeriesViewModel />
+                                        </chart:SfChart.BindingContext>
+                                        <chart:SfChart.ChartBehaviors>
+                                            <chart:ChartTooltipBehavior BackgroundColor="#404041" />
+                                        </chart:SfChart.ChartBehaviors>
+                                        <chart:SfChart.PrimaryAxis>
+                                            <chart:CategoryAxis
+                                                AxisLineOffset="10"
+                                                PlotOffset="10"
+                                                ShowMajorGridLines="false">
+                                                <chart:CategoryAxis.MajorTickStyle>
+                                                    <chart:ChartAxisTickStyle TickSize="10" />
+                                                </chart:CategoryAxis.MajorTickStyle>
+                                            </chart:CategoryAxis>
+                                        </chart:SfChart.PrimaryAxis>
+                                        <chart:SfChart.SecondaryAxis>
+                                            <chart:NumericalAxis
+                                                x:Name="naxis"
+                                                Interval="50"
+                                                Minimum="0">
+                                                <chart:NumericalAxis.LabelStyle>
+                                                    <chart:ChartAxisLabelStyle x:Name="secondaryAxisLabelStyle" />
+                                                </chart:NumericalAxis.LabelStyle>
+                                                <chart:NumericalAxis.AxisLineStyle>
+                                                    <chart:ChartLineStyle StrokeWidth="0" />
+                                                </chart:NumericalAxis.AxisLineStyle>
+                                                <chart:NumericalAxis.MajorTickStyle>
+                                                    <chart:ChartAxisTickStyle TickSize="0" />
+                                                </chart:NumericalAxis.MajorTickStyle>
+                                            </chart:NumericalAxis>
+                                        </chart:SfChart.SecondaryAxis>
+                                        <chart:SfChart.Legend>
+                                            <chart:ChartLegend
+                                                x:Name="chartLegend"
+                                                DockPosition="Top"
+                                                IconHeight="10"
+                                                IconWidth="10"
+                                                ToggleSeriesVisibility="True" />
+                                        </chart:SfChart.Legend>
+                                        <chart:SfChart.ColorModel>
+                                            <chart:ChartColorModel Palette="None" />
+                                        </chart:SfChart.ColorModel>
+                                        <chart:SfChart.Series>
+                                            <chart:LineSeries
+                                                x:Name="lineSeries1"
+                                                EnableAnimation="true"
+                                                EnableTooltip="true"
+                                                ItemsSource="{Binding LineData1}"
+                                                Label="Income"
+                                                LegendIcon="Circle"
+                                                StrokeWidth="3"
+                                                XBindingPath="Name"
+                                                YBindingPath="Value">
+                                                <chart:LineSeries.DataMarker>
+                                                    <chart:ChartDataMarker
+                                                        MarkerBorderColor="#00bdae"
+                                                        MarkerBorderWidth="2"
+                                                        MarkerColor="White"
+                                                        MarkerHeight="10"
+                                                        MarkerWidth="10"
+                                                        ShowLabel="false"
+                                                        ShowMarker="true" />
+                                                </chart:LineSeries.DataMarker>
+                                            </chart:LineSeries>
+                                            <chart:LineSeries
+                                                x:Name="lineSeries2"
+                                                EnableAnimation="true"
+                                                EnableTooltip="true"
+                                                ItemsSource="{Binding LineData2}"
+                                                Label="Expenses"
+                                                LegendIcon="Circle"
+                                                StrokeWidth="3"
+                                                XBindingPath="Name"
+                                                YBindingPath="Value">
+                                                <chart:LineSeries.DataMarker>
+                                                    <chart:ChartDataMarker
+                                                        MarkerBorderColor="#404041"
+                                                        MarkerBorderWidth="2"
+                                                        MarkerColor="White"
+                                                        MarkerHeight="10"
+                                                        MarkerWidth="10"
+                                                        ShowLabel="false"
+                                                        ShowMarker="true" />
+                                                </chart:LineSeries.DataMarker>
+                                            </chart:LineSeries>
+                                        </chart:SfChart.Series>
+                                    </chart:SfChart>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

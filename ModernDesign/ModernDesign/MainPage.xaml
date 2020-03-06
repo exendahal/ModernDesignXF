@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:views="clr-namespace:ModernDesign.View"
+       mc:Ignorable="d"
+             x:Class="ModernDesign.MainPage">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#7175D8" />
+                <Setter Property="Shell.ForegroundColor" Value="#7175D8" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="White" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#8A8C99" />
+                <Setter Property="Shell.TabBarTitleColor" Value="#7175D8" />
+            </Style>
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
+        </ResourceDictionary>
+    </Shell.Resources>
+    <TabBar>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent>
+                <views:HomePage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Analysis" Icon="graph.png">
+            <ShellContent>
+                <views:Analytics />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Sales" Icon="sales.png">
+            <ShellContent>
+                <views:Analytics />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Stock" Icon="store.png">
+            <ShellContent>
+                <views:Analytics />
+            </ShellContent>
+        </Tab>
+        <Tab Title="More" Icon="more.png">
+            <ShellContent>
+                <views:MenuList />
+            </ShellContent>
+        </Tab>
+    </TabBar>
+
+</Shell>
